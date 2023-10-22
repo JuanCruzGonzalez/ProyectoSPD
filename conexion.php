@@ -15,7 +15,7 @@ $result = mysqli_query($link, 'SELECT * FROM vinos');
 
 $row = mysqli_fetch_assoc($result);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["crear"])) {
     $idVinos = $_POST["idVinos"];
     $nombre = $_POST["nombre"];
     $tipoDeVino = $_POST["Tipo_de_Vino_idTipo_de_Vino"];
@@ -24,18 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO vinos (idVinos, nombre, `Tipo de Vino_idTipo de Vino`, Precio_idPrecio) VALUES ('$idVinos', '$nombre', '$tipoDeVino', '$Precio')";
 
     if ($link->query($sql) === TRUE) {
-        echo "Datos insertados correctamente.";
+        header("Location: http://localhost/ProyectoSPD/index.php", TRUE, 301);
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["ingresar"])) {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
     if ($usuario == 'admin' && $contrasena == 'password') {
-        header("Location: /ProyectoSPD/index.php");
+        header("Location: http://localhost/ProyectoSPD/options.php", TRUE, 301);
         exit;
     } else {
         header("Location: login.php?error=1");

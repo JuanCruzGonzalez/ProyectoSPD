@@ -15,12 +15,13 @@ include('conexion.php');
 <body>
     <div class="formulario" >
         <h1>Cuenta Admin</h1>
-        <form action="post" class="form_admin">
+        <form method="post" class="form_admin" action="conexion.php">
             <label for="usuario">Usuario</label>
             <input type="text" name="usuario" id="usuario">
 
             <label for="contrasena">Contraseña</label>
             <input type="password" name="contrasena" id="contrasena">
+            <input type="hidden" name="ingresar" value="1">
 
             <input type="submit" value="Ingresar">
         </form>
