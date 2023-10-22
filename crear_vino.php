@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Vino</title>
+    <link rel="stylesheet" href="/ProyectoSPD/estilos_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="formulario">
         <h1>Formulario para Insertar Datos</h1>
 
-        <form method="post" action="index.php">
+        <form method="post" action="index.php" class="form_admin">
             <label for="idVinos">ID:</label>
             <input type="text" name="idVinos" id="idVinos" required><br>
 

@@ -41,3 +41,17 @@ body {
 .form_admin label{
     color: white;
 }
+
+.formulario a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 40px;
+    width: 250px;
+    border: 1px solid #dfdfdf;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: white;
+    text-decoration: none;
+}

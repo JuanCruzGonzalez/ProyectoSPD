@@ -21,10 +21,10 @@ include('conexion.php');
                 <img src="/ProyectoSPD/images/Logo.png" alt="">
             </div>
             <div class="options">
-                <a href="">Inicio</a>
+                <a href="/ProyectoSPD/index.php">Inicio</a>
                 <a href="">Contacto</a>
                 <a href="">Sobre Nosotros</a>
-                <a href="">Carrito</a>
+                <a href="/ProyectoSPD/carrito.php">Carrito</a>
                 <a href="/ProyectoSPD/Admin.php">Aministrador</a>
             </div>
             <div class="social_media">
@@ -69,6 +69,7 @@ include('conexion.php');
                 echo "<br>";
                 echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
                 echo "Precio: " .$row['Precio_idPrecio'];
+                echo '<input type="button" value="Cargar al carrito">';
                 echo '</div>';
                 if ($result){
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -85,6 +86,7 @@ include('conexion.php');
                         echo "<br>";
                         echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
                         echo "Precio: " .$row['Precio_idPrecio'];
+                        echo '<input type="button" value="Cargar al carrito">';
                         echo '</div>';
                     }
                 }else{

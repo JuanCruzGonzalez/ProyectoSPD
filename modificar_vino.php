@@ -5,10 +5,13 @@ include('modificar.php');
 <html>
 <head>
     <title>Modificar Datos</title>
+    <link rel="stylesheet" href="/ProyectoSPD/estilos_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Modificar Datos</h2>
-    <form method="post" action="modificar.php">
+    <div class="formulario">
+    <h1>Modificar Datos</h1>
+    <form method="post" action="modificar.php" class="form_admin">
         <label for="idVinos">ID del Vino:</label>
         <input type="text" name="idVinos" id="idVinos" required><br>
 
@@ -24,5 +27,6 @@ include('modificar.php');
 
         <input type="submit" value="Modificar Datos">
     </form>
+    </div>
 </body>
 </html>

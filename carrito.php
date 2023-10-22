@@ -47,9 +47,7 @@ include('conexion.php');
         </article>
     </div>
     <article class="page">
-        <form action="">}
-            
-        </form>
+        
     </article>
 </body>
 </html>
