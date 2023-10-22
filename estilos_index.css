@@ -34,7 +34,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
+    padding: 1em;
 }
 
 .logo img{
@@ -144,4 +144,22 @@ body{
 .wine img{
     width: 250px;
     height: auto;
+}
+
+@media screen and (max-width: 1300px) {
+    .logo img{
+        width: 120px;
+
+    }
+    .options, .social_media {
+        margin-top: 70px;
+    }
+
+    .options {
+        line-height: 2;
+    }
+
+    .social_media h5{
+        font-size: 15px;
+    }
 }
