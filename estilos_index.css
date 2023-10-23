@@ -146,6 +146,19 @@ body{
     height: auto;
 }
 
+.btn_carrito{
+    padding: 0.7em 1em;
+    border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    transition: background-color 0.3s; 
+}
+
+.btn_carrito:hover{
+    background-color: #a09c9c;
+}
+
+
+
 @media screen and (max-width: 1300px) {
     .logo img{
         width: 120px;

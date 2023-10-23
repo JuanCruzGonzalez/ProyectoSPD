@@ -68,8 +68,9 @@ include('conexion.php');
                 
                 echo "<br>";
                 echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
+                echo "<br>";
                 echo "Precio: " .$row['Precio_idPrecio'];
-                echo '<input type="button" value="Cargar al carrito">';
+                echo '<input type="button" value="Cargar al carrito" class="btn_carrito">';
                 echo '</div>';
                 if ($result){
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -85,8 +86,9 @@ include('conexion.php');
                         
                         echo "<br>";
                         echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
+                        echo "<br>";
                         echo "Precio: " .$row['Precio_idPrecio'];
-                        echo '<input type="button" value="Cargar al carrito">';
+                        echo '<input type="button" value="Cargar al carrito" class="btn_carrito" data-product="' . $row['Nombre'] . ' - ' . $row['Tipo de Vino_idTipo de Vino'] . ' - ' . $row['Precio_idPrecio'] . '">';
                         echo '</div>';
                     }
                 }else{
@@ -97,4 +99,20 @@ include('conexion.php');
         </article>
     </article>
 </body>
+<script>
+    var carrito = [];
+
+    // Función para agregar un producto al carrito
+    function agregarAlCarrito(producto) {
+        carrito.push(producto);
+        console.log("Producto agregado al carrito: " + producto);
+
+        // Enviar la información del producto al servidor utilizando AJAX
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST", "agregar_al_carrito.php", true);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send("producto=" + encodeURIComponent(producto));
+    }
+</script>
+
 </html>

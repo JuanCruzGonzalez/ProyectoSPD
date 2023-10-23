@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["eliminar"])) {
     $sql = "DELETE FROM vinos WHERE idVinos = '$idVinos'";
 
     if ($link->query($sql) === TRUE) {
-        header("Location: http://localhost/ProyectoSPD/index.php", TRUE, 301);
+        header("Location: http://localhost/ProyectoSPD/eliminado_exitoso.php", TRUE, 301);
     } else {
         echo "Error al eliminar el registro: " . $conn->error;
     }

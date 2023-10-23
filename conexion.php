@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["crear"])) {
     $sql = "INSERT INTO vinos (idVinos, nombre, `Tipo de Vino_idTipo de Vino`, Precio_idPrecio) VALUES ('$idVinos', '$nombre', '$tipoDeVino', '$Precio')";
 
     if ($link->query($sql) === TRUE) {
-        header("Location: http://localhost/ProyectoSPD/index.php", TRUE, 301);
+        header("Location: http://localhost/ProyectoSPD/creado_exitoso.php", TRUE, 301);
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
     }

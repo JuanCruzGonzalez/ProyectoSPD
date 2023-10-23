@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["modificar"])) {
     $sql = "UPDATE vinos SET nombre = '$nombre', `Tipo de Vino_idTipo de Vino` = '$tipoDeVino', Precio_idPrecio = '$Precio' WHERE idVinos = '$idVinos'";
     
     if ($link->query($sql) === TRUE) {
-        header("Location: http://localhost/ProyectoSPD/index.php", TRUE, 301);
+        header("Location: http://localhost/ProyectoSPD/modificado_exitoso.php", TRUE, 301);
     } else {
         echo "Error al actualizar los datos: " . $link->error;
     }
