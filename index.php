@@ -1,5 +1,6 @@
 <?php
 include('conexion.php');
+session_start();
 ?>
 
 <!doctype html>
@@ -22,8 +23,8 @@ include('conexion.php');
             </div>
             <div class="options">
                 <a href="/ProyectoSPD/index.php">Inicio</a>
-                <a href="">Contacto</a>
-                <a href="">Sobre Nosotros</a>
+                <a href="/ProyectoSPD/contacto.php">Contacto</a>
+                <a href="/ProyectoSPD/nosotros.php">Sobre Nosotros</a>
                 <a href="/ProyectoSPD/carrito.php">Carrito</a>
                 <a href="/ProyectoSPD/Admin.php">Aministrador</a>
             </div>
@@ -77,8 +78,14 @@ include('conexion.php');
                         if ($row['Tipo de Vino_idTipo de Vino'] == 1){
                             $row['Tipo de Vino_idTipo de Vino'] = "Cabernet";
                         }
+                        if ($row['Tipo de Vino_idTipo de Vino'] == 2){
+                            $row['Tipo de Vino_idTipo de Vino'] = "Champagne";
+                        }
                         if ($row['Precio_idPrecio'] == 1){
                             $row['Precio_idPrecio'] = "1000";
+                        }
+                        if ($row['Precio_idPrecio'] == 2){
+                            $row['Precio_idPrecio'] = "2000";
                         }
                         echo '<div class="wine">';
                         echo "<h3>" . $row['Nombre'] . "</h3>" ."<br>";
@@ -88,7 +95,7 @@ include('conexion.php');
                         echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
                         echo "<br>";
                         echo "Precio: " .$row['Precio_idPrecio'];
-                        echo '<input type="button" value="Cargar al carrito" class="btn_carrito" data-product="' . $row['Nombre'] . ' - ' . $row['Tipo de Vino_idTipo de Vino'] . ' - ' . $row['Precio_idPrecio'] . '">';
+                        echo '<input type="button" value="Cargar al carrito" class="btn_carrito" onclick="agregarAlCarrito(\'' . $row['Nombre'] . ' - ' . $row['Tipo de Vino_idTipo de Vino'] . ' - ' . $row['Precio_idPrecio'] . '\')">'; // Agregar esta línea
                         echo '</div>';
                     }
                 }else{
@@ -109,7 +116,7 @@ include('conexion.php');
 
         // Enviar la información del producto al servidor utilizando AJAX
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("POST", "agregar_al_carrito.php", true);
+        xmlhttp.open("POST", "carrito.php", true);
         xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xmlhttp.send("producto=" + encodeURIComponent(producto));
     }

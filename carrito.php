@@ -1,5 +1,16 @@
 <?php
 include('conexion.php');
+session_start();
+if (isset($_POST['producto'])) {
+    // Receive the product information from the client
+    $producto = $_POST['producto'];
+
+    // Store the product in a session variable or any other data structure you need
+    $_SESSION['carrito'][] = $producto;
+
+    // You can send a response to the client if necessary
+    echo "Producto agregado al carrito: " . $producto;
+}
 ?>
 
 <!doctype html>
@@ -47,21 +58,6 @@ include('conexion.php');
         </article>
     </div>
     <article class="page">
-        <article class="wines">
-        <?php
-            session_start();
-            if (isset($_POST['producto'])) {
-                // Recibe la información del producto desde el cliente
-                $producto = $_POST['producto'];
-
-                // Almacena el producto en una variable de sesión o en cualquier otra estructura de datos que necesites
-                $_SESSION['carrito'][] = $producto;
-
-                // Puedes enviar una respuesta al cliente si es necesario
-                echo "Producto agregado al carrito: " . $producto;
-            }
-        ?>
-        </article>
     </article>
 </body>
 </html>

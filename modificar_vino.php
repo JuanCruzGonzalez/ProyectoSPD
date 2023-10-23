@@ -18,16 +18,58 @@ include('modificar.php');
         <h1>Modificar Datos</h1>
         <form method="post" action="modificar.php" class="form_admin">
             <label for="idVinos">ID del Vino:</label>
-            <input type="text" name="idVinos" id="idVinos" required><br>
+            <select name="idVinos" id="idVinos" required>
+                <option value="opcion">
+                    <?php 
+                        if ($id_vinos) {
+                            while ($row_id = mysqli_fetch_assoc($id_vinos)) {
+                                echo '<option value="' . $row_id['idVinos'] . '">';
+                                echo $row_id['idVinos'];
+                                echo '</option>';
+                            }
+                        } else {
+                            echo "Error en la consulta: " . $link->error;
+                        }
+                    ?>
+                </option>
+            </select><br>
 
             <label for="nombre">Nuevo Nombre:</label>
             <input type="text" name="nombre" id="nombre" required><br>
 
             <label for="Tipo_de_Vino_idTipo_de_Vino">Nuevo Tipo de Vino:</label>
-            <input type="text" name="Tipo_de_Vino_idTipo_de_Vino" id="Tipo_de_Vino_idTipo_de_Vino" required><br>
+            <select name="Tipo_de_Vino_idTipo_de_Vino" id="Tipo_de_Vino_idTipo_de_Vino" required>
+                <option value="option">---</option>
+                <?php 
+
+                if ($tipos_vinos) {
+                    while ($row_tipos = mysqli_fetch_assoc($tipos_vinos)) {
+                        echo '<option value="' . $row_tipos['idTipo de Vino'] . '">';
+                        echo $row_tipos['idTipo de Vino'];
+                        echo '</option>';
+                    }
+                } else {
+                    echo "Error en la consulta: " . $link->error;
+                }
+                ?>
+            </select>
 
             <label for="Precio_idPrecio">Nuevo Precio:</label>
-            <input type="text" name="Precio_idPrecio" id="Precio_idPrecio" required><br>
+            <select name="Precio_idPrecio" id="Precio_idPrecio" required>
+                <option value="option">---</option>
+                <?php 
+
+                if ($precio_vinos) {
+                    while ($row_precio = mysqli_fetch_assoc($precio_vinos)) {
+                        echo '<option value="' . $row_precio['idPrecio'] . '">';
+                        echo $row_precio['idPrecio'];
+                        echo '</option>';
+                    }
+                } else {
+                    echo "Error en la consulta: " . $link->error;
+                }
+                ?>
+            </select>
             <input type="hidden" name="modificar" value="1">
 
             <input type="submit" value="Modificar Datos">

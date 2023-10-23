@@ -15,6 +15,22 @@ $result = mysqli_query($link, 'SELECT * FROM vinos');
 
 $row = mysqli_fetch_assoc($result);
 
+$id_list = "SELECT idVinos FROM vinos";
+$id_vinos = $link->query($id_list);
+$row_id = mysqli_fetch_assoc($id_vinos);
+$last_id = 0;
+if ($link){
+    while ($row_id = mysqli_fetch_assoc($id_vinos)) {
+        $last_id = $row_id['idVinos'];
+    }
+}
+
+$tipos_list = "SELECT * FROM `Tipo de Vino`";
+$tipos_vinos = $link->query($tipos_list);
+
+$precio_list = "SELECT * FROM `precio`";
+$precio_vinos = $link->query($precio_list);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["crear"])) {
     $idVinos = $_POST["idVinos"];
     $nombre = $_POST["nombre"];

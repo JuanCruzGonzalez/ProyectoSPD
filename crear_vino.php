@@ -1,3 +1,7 @@
+<?php
+include('conexion.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +22,52 @@
 
         <form method="post" action="index.php" class="form_admin">
             <label for="idVinos">ID</label>
-            <input type="text" name="idVinos" id="idVinos" required><br>
+            <select name="idVinos" id="idVinos" required>
+                <option value="opcion">
+                    <?php 
+                        echo '<option value="' . $last_id+1 . '">';
+                        echo $last_id+1;
+                        echo '</option>';
+                    ?>
+                </option>
+            </select><br>
 
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" required><br>
 
             <label for="Tipo_de_Vino_idTipo_de_Vino">Tipo de Vino</label>
-            <input type="text" name="Tipo_de_Vino_idTipo_de_Vino" id="Tipo_de_Vino_idTipo_de_Vino" required><br>
+            <select name="Tipo_de_Vino_idTipo_de_Vino" id="Tipo_de_Vino_idTipo_de_Vino" required>
+                <option value="option">---</option>
+                <?php 
+
+                if ($tipos_vinos) {
+                    while ($row_tipos = mysqli_fetch_assoc($tipos_vinos)) {
+                        echo '<option value="' . $row_tipos['idTipo de Vino'] . '">';
+                        echo $row_tipos['idTipo de Vino'];
+                        echo '</option>';
+                    }
+                } else {
+                    echo "Error en la consulta: " . $link->error;
+                }
+                ?>
+            </select><br>
 
             <label for="Precio_idPrecio">Precio</label>
-            <input type="text" name="Precio_idPrecio" id="Precio_idPrecio" required><br>
+            <select name="Precio_idPrecio" id="Precio_idPrecio" required>
+                <option value="option">---</option>
+                <?php 
+
+                if ($precio_vinos) {
+                    while ($row_precio = mysqli_fetch_assoc($precio_vinos)) {
+                        echo '<option value="' . $row_precio['idPrecio'] . '">';
+                        echo $row_precio['idPrecio'];
+                        echo '</option>';
+                    }
+                } else {
+                    echo "Error en la consulta: " . $link->error;
+                }
+                ?>
+            </select><br>
             <input type="hidden" name="crear" value="1">
 
             <input type="submit" value="Guardar">

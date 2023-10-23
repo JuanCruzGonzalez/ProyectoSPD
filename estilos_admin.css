@@ -38,7 +38,7 @@ body {
     width: 400px;
 }
 
-.form_admin input{
+.form_admin input, .form_admin select{
     border-radius: 10px;
     height: 40px;
     border: 1px solid #dfdfdf;
