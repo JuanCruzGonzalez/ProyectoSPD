@@ -9,8 +9,7 @@ if (!$link) {
     exit;
 }
 
-// Guarda el ultimo id
-$id_list = "SELECT idVinos FROM vinos";
+$id_list = "SELECT idVinos FROM vinos ORDER BY idVinos ASC";
 $id_vinos = $link->query($id_list);
 $row_id = mysqli_fetch_assoc($id_vinos);
 
@@ -20,7 +19,7 @@ $tipos_vinos = $link->query($tipos_list);
 
 $precio_list = "SELECT * FROM `precio`";
 $precio_vinos = $link->query($precio_list);
-// Recuperar los datos a modificar (por ejemplo, a través de un formulario POST)
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["modificar"])) {
     $idVinos = $_POST["idVinos"];
     $nombre = $_POST["nombre"];
@@ -36,9 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["modificar"])) {
     }
 }
 
-// Sentencia SQL para actualizar los datos
-
-
-// Cerrar la conexión a la base de datos
 $link->close();
 ?>

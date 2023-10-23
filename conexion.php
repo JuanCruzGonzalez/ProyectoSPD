@@ -15,14 +15,14 @@ $result = mysqli_query($link, 'SELECT * FROM vinos');
 
 $row = mysqli_fetch_assoc($result);
 
-$id_list = "SELECT idVinos FROM vinos";
-$id_vinos = $link->query($id_list);
-$row_id = mysqli_fetch_assoc($id_vinos);
-$last_id = 0;
-if ($link){
-    while ($row_id = mysqli_fetch_assoc($id_vinos)) {
-        $last_id = $row_id['idVinos'];
-    }
+$id_list = "SELECT MAX(idVinos) as last_id FROM vinos";
+$result_id_list = $link->query($id_list);
+
+if ($result_id_list) {
+    $row = $result_id_list->fetch_assoc();
+    $last_id = $row['last_id'];
+} else {
+    $last_id = 0;
 }
 
 $tipos_list = "SELECT * FROM `Tipo de Vino`";

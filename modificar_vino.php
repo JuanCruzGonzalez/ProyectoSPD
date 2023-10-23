@@ -43,9 +43,16 @@ include('modificar.php');
                 <?php 
 
                 if ($tipos_vinos) {
+                    $tipos_visual = 0;
                     while ($row_tipos = mysqli_fetch_assoc($tipos_vinos)) {
+                        if ($row_tipos['idTipo de Vino'] == 1){
+                            $tipos_visual = "Cabernet";
+                        }
+                        if ($row_tipos['idTipo de Vino'] == 2){
+                            $tipos_visual = "Champagne";
+                        }
                         echo '<option value="' . $row_tipos['idTipo de Vino'] . '">';
-                        echo $row_tipos['idTipo de Vino'];
+                        echo $tipos_visual;
                         echo '</option>';
                     }
                 } else {
@@ -60,9 +67,16 @@ include('modificar.php');
                 <?php 
 
                 if ($precio_vinos) {
+                    $precio_visual = 0;
                     while ($row_precio = mysqli_fetch_assoc($precio_vinos)) {
+                        if ($row_precio['idPrecio'] == 1){
+                            $precio_visual = "1000";
+                        }
+                        if ($row_precio['idPrecio'] == 2){
+                            $precio_visual = "2000";
+                        }
                         echo '<option value="' . $row_precio['idPrecio'] . '">';
-                        echo $row_precio['idPrecio'];
+                        echo $precio_visual;
                         echo '</option>';
                     }
                 } else {

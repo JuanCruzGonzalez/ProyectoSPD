@@ -9,6 +9,11 @@ if (!$link) {
     exit;
 }
 
+$id_list = "SELECT idVinos FROM vinos ORDER BY idVinos ASC";
+$id_vinos = $link->query($id_list);
+$row_id = mysqli_fetch_assoc($id_vinos);
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["eliminar"])) {
     $idVinos = $_POST['idVinos'];
 

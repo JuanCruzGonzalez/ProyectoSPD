@@ -17,7 +17,7 @@
         <h1>Decida que va a hacer</h1>
         <a href="/ProyectoSPD/crear_vino.php">Crear Vino</a>
         <a href="/ProyectoSPD/modificar_vino.php">Modificar Vino</a>
-        <a href="/ProyectoSPD/eliminar_vino.php">Elminar un Vino</a>
+        <a href="/ProyectoSPD/eliminar_vino.php">Eliminar un Vino</a>
     </div>
 </body>
 </html>

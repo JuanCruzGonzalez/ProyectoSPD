@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+include('eliminar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,21 @@ include('conexion.php');
         <h1>Elija el vino que desea eliminar</h1>
         <form action="eliminar.php" method="post" class="form_admin">
             <label for="idVinos">ID</label>
-            <input type="number" name="idVinos" id="idVinos">
+            <select name="idVinos" id="idVinos" required>
+                <option value="opcion">
+                    <?php 
+                        if ($id_vinos) {
+                            while ($row_id = mysqli_fetch_assoc($id_vinos)) {
+                                echo '<option value="' . $row_id['idVinos'] . '">';
+                                echo $row_id['idVinos'];
+                                echo '</option>';
+                            }
+                        } else {
+                            echo "Error en la consulta: " . $link->error;
+                        }
+                    ?>
+                </option>
+            </select>
             <input type="hidden" name="eliminar">
             <input type="submit" value="Eliminar">
         </form>

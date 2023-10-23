@@ -23,13 +23,11 @@ include('conexion.php');
         <form method="post" action="index.php" class="form_admin">
             <label for="idVinos">ID</label>
             <select name="idVinos" id="idVinos" required>
-                <option value="opcion">
                     <?php 
                         echo '<option value="' . $last_id+1 . '">';
                         echo $last_id+1;
                         echo '</option>';
                     ?>
-                </option>
             </select><br>
 
             <label for="nombre">Nombre</label>
@@ -41,9 +39,16 @@ include('conexion.php');
                 <?php 
 
                 if ($tipos_vinos) {
+                    $tipos_visual = 0;
                     while ($row_tipos = mysqli_fetch_assoc($tipos_vinos)) {
+                        if ($row_tipos['idTipo de Vino'] == 1){
+                            $tipos_visual = "Cabernet";
+                        }
+                        if ($row_tipos['idTipo de Vino'] == 2){
+                            $tipos_visual = "Champagne";
+                        }
                         echo '<option value="' . $row_tipos['idTipo de Vino'] . '">';
-                        echo $row_tipos['idTipo de Vino'];
+                        echo $tipos_visual;
                         echo '</option>';
                     }
                 } else {
@@ -58,9 +63,16 @@ include('conexion.php');
                 <?php 
 
                 if ($precio_vinos) {
+                    $precio_visual =0;
                     while ($row_precio = mysqli_fetch_assoc($precio_vinos)) {
+                        if ($row_precio['idPrecio'] == 1){
+                            $precio_visual = "1000";
+                        }
+                        if ($row_precio['idPrecio'] == 2){
+                            $precio_visual = "2000";
+                        }
                         echo '<option value="' . $row_precio['idPrecio'] . '">';
-                        echo $row_precio['idPrecio'];
+                        echo $precio_visual;
                         echo '</option>';
                     }
                 } else {
