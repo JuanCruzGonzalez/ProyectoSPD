@@ -145,6 +145,41 @@ body{
     width: 250px;
     height: auto;
 }
+.page_nosotros{
+    background-image: url("/ProyectoSPD/images/background_image_nosotros.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center; 
+    padding: 2em;
+    
+}
+.page_nosotros h1 {
+    margin-top: -250px;
+}
+.page_nosotros p {
+    margin-top: -150px;
+    font-size: 22px;
+}
+.page_contacto{
+    background-image: url("/ProyectoSPD/images/background_image_nosotros.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
+    text-align: center; 
+    padding: 3em;
+    
+}
+
+
 
 @media screen and (max-width: 1300px) {
     .logo img{
