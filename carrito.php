@@ -18,7 +18,7 @@ if (isset($_POST['producto'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="/ProyectoSPD/estilos_index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +32,10 @@ if (isset($_POST['producto'])) {
                 <img src="/ProyectoSPD/images/Logo.png" alt="">
             </div>
             <div class="options">
-                <a href="">Inicio</a>
-                <a href="">Contacto</a>
-                <a href="">Sobre Nosotros</a>
-                <a href="">Carrito</a>
+                <a href="/ProyectoSPD/index.php">Inicio</a>
+                <a href="/ProyectoSPD/contacto.php">Contacto</a>
+                <a href="/ProyectoSPD/nosotros.php">Sobre Nosotros</a>
+                <a href="/ProyectoSPD/carrito.php">Carrito</a>
                 <a href="/ProyectoSPD/Admin.php">Aministrador</a>
             </div>
             <div class="social_media">
