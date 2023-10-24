@@ -19,7 +19,7 @@ session_start();
     <div class="menu">
         <article class="scroll">
             <div class="logo">
-                <img src="/ProyectoSPD/images/Logo.png" alt="">
+            <a href="/ProyectoSPD/index.php"><img src="/ProyectoSPD/images/Logo.png" alt=""></a>
             </div>
             <div class="options">
                 <a href="/ProyectoSPD/index.php">Inicio</a>

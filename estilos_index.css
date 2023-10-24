@@ -189,6 +189,24 @@ body{
     color: #dfdfdf;
 }
 
+.form_contacto{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.form_contacto input, .form_contacto select{
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.form_contacto label{
+    color: white;
+}
+
 .btn_carrito{
     padding: 0.7em 1em;
     border-radius: 10px;

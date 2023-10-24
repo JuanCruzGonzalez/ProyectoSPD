@@ -18,7 +18,7 @@ include('conexion.php');
     <div class="menu">
         <article class="scroll">
             <div class="logo">
-                <img src="/ProyectoSPD/images/Logo.png" alt="">
+            <a href="/ProyectoSPD/index.php"><img src="/ProyectoSPD/images/Logo.png" alt=""></a>
             </div>
             <div class="options">
                 <a href="/ProyectoSPD/index.php">Inicio</a>
@@ -47,22 +47,18 @@ include('conexion.php');
         </article>
     </div>
     <article class="page_contacto">
-        <div>
-            <form action="" method="" class= "formulario_contacto">
-                <fieldset>
-                    <legend>Contacto</legend>
+        <div class="formulario_contacto">
+            <h1>Contacto</h1>
+            <form action="" method="" class= "form_contacto">
                     <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required><br><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
                     <label for="phone">Telefono: </label>
-                    <input type="phone" id="phone" name="phone" placeholder="Ingrese su telefono" require><br><br>
+                    <input type="phone" id="phone" name="phone" placeholder="Ingrese su telefono" required>
                     <label for="email">Email: </label>
-                    <input type="email" id="email" name="email"placeholder="Ingrese su Email" required><br><br>
-                    <label for="mensaje">Mensaje:</label><br><br>
-                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Ingrese su consulta." required></textarea><br><br>
-                    <input class="" type="checkbox" id="gridCheck">
-                    <label class="" for="gridCheck">Deseo recibir novedades por mail</label><br><br>
-                    <input type="submit" value="Enviar">
-                </fieldset>
+                    <input type="email" id="email" name="email"placeholder="Ingrese su Email" required>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Ingrese su consulta." required></textarea><br>
+                    <input type="submit" value="Enviar" onclick="alert('El formulario se ha enviado correctamente.')">
             </form >
         </div>
     </article>
