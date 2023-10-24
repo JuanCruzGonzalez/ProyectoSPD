@@ -1,16 +1,5 @@
 <?php
 include('conexion.php');
-session_start();
-if (isset($_POST['producto'])) {
-    // Receive the product information from the client
-    $producto = $_POST['producto'];
-
-    // Store the product in a session variable or any other data structure you need
-    $_SESSION['carrito'][] = $producto;
-
-    // You can send a response to the client if necessary
-    echo "Producto agregado al carrito: " . $producto;
-}
 ?>
 
 <!doctype html>
@@ -24,6 +13,7 @@ if (isset($_POST['producto'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/ProyectoSPD/estilos_carrito.css">
 </head>
 <body>
     <div class="menu">
@@ -32,10 +22,10 @@ if (isset($_POST['producto'])) {
                 <img src="/ProyectoSPD/images/Logo.png" alt="">
             </div>
             <div class="options">
-                <a href="">Inicio</a>
-                <a href="">Contacto</a>
-                <a href="">Sobre Nosotros</a>
-                <a href="">Carrito</a>
+                <a href="/ProyectoSPD/index.php">Inicio</a>
+                <a href="/ProyectoSPD/contacto.php">Contacto</a>
+                <a href="/ProyectoSPD/nosotros.php">Sobre Nosotros</a>
+                <a href="/ProyectoSPD/carrito.php">Carrito</a>
                 <a href="/ProyectoSPD/Admin.php">Aministrador</a>
             </div>
             <div class="social_media">
@@ -58,6 +48,77 @@ if (isset($_POST['producto'])) {
         </article>
     </div>
     <article class="page">
+        <div class="carrito">
+            <h2>Mi Carrito</h2>
+            <div class="product">
+                <?php 
+                $row = mysqli_fetch_assoc($result);
+                if ($row['Tipo de Vino_idTipo de Vino'] == 1) {
+                    $row['Tipo de Vino_idTipo de Vino'] = "Cabernet";
+                } elseif ($row['Tipo de Vino_idTipo de Vino'] == 2) {
+                    $row['Tipo de Vino_idTipo de Vino'] = "Champagne";
+                }
+                if ($row['Precio_idPrecio'] == 1) {
+                    $row['Precio_idPrecio'] = "1000";
+                } elseif ($row['Precio_idPrecio'] == 2) {
+                    $row['Precio_idPrecio'] = "2000";
+                }
+                ?>
+                <div class="title-img">
+                <?php 
+                echo '<div class="wine">';
+                echo "<h3 class='wine_title'>" . $row['Nombre'] . "|". $row['Tipo de Vino_idTipo de Vino'] ."</h3>";
+                echo "<br>";
+                echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
+                echo "<br>";
+                ?>
+                </div>
+            </div>
+            <div class="cant">Cantidad: 1000</div>
+            <div class="price">
+                <?php 
+                echo "Precio: " . $row['Precio_idPrecio'];
+                echo '</div>';
+                ?>
+            </div>
+            <div class="product">
+                <?php 
+                $row = mysqli_fetch_assoc($result);
+                if ($row['Tipo de Vino_idTipo de Vino'] == 1) {
+                    $row['Tipo de Vino_idTipo de Vino'] = "Cabernet";
+                } elseif ($row['Tipo de Vino_idTipo de Vino'] == 2) {
+                    $row['Tipo de Vino_idTipo de Vino'] = "Champagne";
+                }
+                if ($row['Precio_idPrecio'] == 1) {
+                    $row['Precio_idPrecio'] = "1000";
+                } elseif ($row['Precio_idPrecio'] == 2) {
+                    $row['Precio_idPrecio'] = "2000";
+                }
+                ?>
+                <div class="title-img">
+                <?php 
+                echo '<div class="wine">';
+                echo "<h3 class='wine_title'>" . $row['Nombre'] . "|". $row['Tipo de Vino_idTipo de Vino'] ."</h3>";
+                echo "<br>";
+                echo '<img src="/ProyectoSPD/images/VIno.jpg" alt="">';
+                echo "<br>";
+                ?>
+                </div>
+            </div>
+            <div class="cant">Cantidad: 600</div>
+            <div class="price">
+                <?php 
+                echo "Precio: " . $row['Precio_idPrecio'];
+                echo '</div>';
+                ?>
+            </div>
+            <div class="total">
+                <h3>Unidades 1600 | Total: $3.200.000</h3>
+            </div>
+            <div class="pedido">
+                <a href="/ProyectoSPD/factura.php" class="btn-pedido">Realizar Pedido</a>
+            </div>
+        </div>
     </article>
 </body>
 </html>

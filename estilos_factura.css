@@ -1,0 +1,53 @@
+.page{
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.form_cliente{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.empresa{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.empresa input{
+    margin-bottom: 0 !important;
+}
+
+.num, .CP{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.street_num{
+    display: flex;
+    width: 100%;
+}
+
+.num{
+    margin-right: 5px;
+}
+
+.num, .CP{
+    width: 50%;
+}
+
+.street_num input{
+    width: 100% !important;
+}

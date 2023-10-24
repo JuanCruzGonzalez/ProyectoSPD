@@ -1,0 +1,65 @@
+.page {
+    padding: 3em;
+}
+
+.carrito {
+    background-color: rgb(238, 237, 237);
+    padding: 3em;
+    border-radius: 10px;
+}
+
+.carrito h2{
+    margin-bottom: 0.5em;
+}
+
+.wine{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    color: black;
+}
+
+.product{
+    padding: 2em 0em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    border-top: 1px solid #dfdfdf;
+}
+
+.cant, .price, .total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wine_title{
+    font-size: 20px;
+}
+
+.price{
+    padding-right: 20px;
+}
+.total {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #dfdfdf;
+}
+.pedido{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-pedido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 60px;
+    width: 250px;
+    border: 1px solid #dfdfdf;
+    margin-top: 50px;
+    background-color: rgb(117, 116, 116);
+    text-decoration: none;
+    color: white;
+    right: 0;
+}
