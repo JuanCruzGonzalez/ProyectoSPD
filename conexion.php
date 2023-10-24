@@ -9,8 +9,6 @@ if (!$link) {
     exit;
 }
 
-$dbTablesList = array_column($link->query('SHOW TABLES')->fetch_all(MYSQLI_ASSOC), 'Tables_in_mydb');
-
 $result = mysqli_query($link, 'SELECT * FROM vinos');
 
 $row = mysqli_fetch_assoc($result);
@@ -58,7 +56,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["ingresar"])) {
         exit;
     }
 }
-
-
 $link->close();
 ?>

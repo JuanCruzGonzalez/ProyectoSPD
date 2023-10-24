@@ -1,6 +1,5 @@
 <?php
 include('conexion.php');
-session_start();
 ?>
 
 <!doctype html>
@@ -99,19 +98,4 @@ session_start();
         </article>
     </article>
 </body>
-<script>
-    var carrito = [];
-
-    // Función para agregar un producto al carrito
-    function agregarAlCarrito(producto) {
-        carrito.push(producto);
-        console.log("Producto agregado al carrito: " + producto);
-
-        // Enviar la información del producto al servidor utilizando AJAX
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("POST", "carrito.php", true);
-        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xmlhttp.send("producto=" + encodeURIComponent(producto));
-    }
-</script>
 </html>
