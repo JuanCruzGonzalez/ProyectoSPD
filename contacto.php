@@ -49,7 +49,7 @@ include('conexion.php');
     <article class="page_contacto">
         <div class="formulario_contacto">
             <h1>Contacto</h1>
-            <form action="" method="" class= "form_contacto">
+            <form action="post" method="" class= "form_contacto">
                     <label for="nombre">Nombre: </label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
                     <label for="phone">Telefono: </label>
@@ -62,5 +62,6 @@ include('conexion.php');
             </form >
         </div>
     </article>
+    <div></div>
 </body>
 </html>
